@@ -1,0 +1,63 @@
+{% extends "Noter/base.html" %}
+{% load static %}
+
+{% block title %}
+  Home - Noter
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+  <section class="row" style="min-height: calc(100vh);">
+    <div class="col-md-6 p-5  d-flex align-items-center justify-content-center">
+      <div class="card" style="margin-top:56px;">
+        <img src="{% static 'man_with_notebook.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">All of your notes in one place!</h5>
+          <p class="card-text">Effortless Organization for a Seamless Note-Taking Experience.</p>
+          <a href="{% url 'signup' %}" class="btn btn-primary">Sign up</a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-primary text-white col-md-6 p-5 d-flex flex-column align-items-center justify-content-center">
+      <p class="lead" style="margin-top:56px;">
+        <strong>
+          Welcome to Noter – Your Ultimate Note-Taking Companion
+        </strong><br>
+        At Noter, we believe in simplicity, efficiency, and seamless organization. Our application is designed to be your go-to platform for all your note-taking needs, offering a user-friendly interface and powerful features that enhance your productivity.
+      </p>
+      <div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row bg-dark p-5 text-white">
+    <h1 class="display-1 p-5 text-center">What users think about us?</h1>
+    <div class="d-flex flex-wrap justify-content-center text-black">
+      <div class="card mb-3 mx-3 p-5 shadow-sm col-lg-4 col-md-6">
+        <img src="{% static 'person1.jpg' %}" class="mx-auto shadow-sm card-img-top rounded-circle custom-card-img" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">Anna Reed</h5>
+          <p class="card-text">"Noter is my new go-to tool for organizing thoughts! Thanks to it, my notes are now neat and easily accessible."</p>
+          <p class="card-text"><small class="text-muted">Blogger</small></p>
+        </div>
+      </div>
+      <div class="card mb-3 mx-3 p-5 shadow-sm col-lg-4 col-md-6">
+        <img src="{% static 'person2.jpg' %}" class="mx-auto shadow-sm card-img-top rounded-circle custom-card-img" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">Olivia Johnson</h5>
+          <p class="card-text">"As a student, Noter helps me keep track of my busy class schedule. I highly recommend it!"</p>
+          <p class="card-text"><small class="text-muted">Computer Science Student</small></p>
+        </div>
+      </div>
+      <div class="card mb-3 mx-3 p-5 shadow-sm col-lg-4 col-md-6">
+        <img src="{% static 'person3.jpg' %}" class="mx-auto shadow-sm card-img-top rounded-circle custom-card-img" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">Liam Martinez</h5>
+          <p class="card-text"> "I've always been forgetful, but with Noter, my ideas are always documented. Check it out!"</p>
+          <p class="card-text"><small class="text-muted">Programmer</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

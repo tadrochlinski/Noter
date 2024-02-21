@@ -1,0 +1,22 @@
+{% extends 'Noter/base.html' %}
+
+{% block title %}
+  Delete - {{ note.title }} - Noter
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="d-flex justify-content-center flex-column align-items-center p-5" style="min-height: 100vh">
+    <h2 class="display-2">Delete Note</h2>
+    <p class="lead">Are you sure you want to delete the note "{{ note.title }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button class = "btn btn-danger" type="submit">Delete</button>
+    </form>
+
+    <a href="{% url 'dashboard' %}">Cancel</a>
+</div>
+  
+{% endblock %}

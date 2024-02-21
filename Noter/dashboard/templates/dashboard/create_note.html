@@ -1,0 +1,25 @@
+{% extends 'Noter/base.html' %}
+
+{% block title %}
+  {{ user.username }} Write - Noter
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center flex-column align-items-center p-5" style="min-height: 100vh">
+
+    <h2 class="display-2" style="margin-top: 56px;">Create</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+</div>
+
+<script src="{% static 'ckeditor/ckeditor.js' %}"></script>
+<script>
+    CKEDITOR.replace('id_content');
+</script>
+{% endblock %}

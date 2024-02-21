@@ -1,0 +1,49 @@
+{% extends "Noter/base.html" %}
+{% load static %}
+
+{% block title %}
+  Sign up - Noter
+{% endblock title %}
+
+{% block content %}
+<div class="fluid-container d-flex justify-content-center align-items-center p-5" style="height: 100vh; background-image: url('{% static 'noting3.jpg' %}'); ">
+    <div class="signup p-5 border rounded shadow-sm bg-white d-flex flex-column align-items-center justify-content-evenly" style="margin-top: 56px; width: 450px; height: 500px">
+        <h1>Sign up</h1>
+        <form method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <input type="text" class="form-control" id="{{ form.username.id_for_label }}" placeholder="Enter your username" name="{{ form.username.name }}" required>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" id="{{ form.email.id_for_label }}" placeholder="Enter your email" name="{{ form.email.name }}" required>
+                <div class="invalid-feedback">
+                    Please provide a valid email.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" placeholder="Choose a password" name="{{ form.password1.name }}" required>
+                <div class="invalid-feedback">
+                    Please choose a password.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" placeholder="Confirm your password" name="{{ form.password2.name }}" required>
+                <div class="invalid-feedback">
+                    Please confirm your password.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Signup</button>
+            <a href="{% url 'login' %}" class="btn btn-link">Already have an account?</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

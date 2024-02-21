@@ -1,0 +1,36 @@
+{% extends "Noter/base.html" %}
+
+{% block title %}
+  Login - Noter
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<div class="fluid-container d-flex justify-content-center align-items-center p-5 bg-white" style="height: 100vh; background-image: url('{% static 'noting3.jpg' %}'); background-position: center center">
+    <div class="signup p-5 border rounded shadow-sm bg-white d-flex flex-column align-items-center justify-content-center" style="margin-top: 56px; width: 450px; height: 500px">
+        <h1>Login</h1>
+        <form method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <input type="text" class="form-control" id="{{ form.username.id_for_label }}" placeholder="Enter your username" name="{{ form.username.name }}" required>
+                <div class="invalid-feedback">
+                    Please enter your username.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <input type="password" class="form-control" id="{{ form.password.id_for_label }}" placeholder="Enter your password" name="{{ form.password.name }}" required>
+                <div class="invalid-feedback">
+                    Please enter your password.
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="{% url 'signup' %}" class="btn btn-link">Don't have an account?</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
